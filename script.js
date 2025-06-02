@@ -1,58 +1,50 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const cartasVocabularioDiv = document.getElementById('cartas-vocabulario');
-    const mostrarRespuestaBtn = document.getElementById('mostrar-respuesta');
-    const siguienteCartaBtn = document.getElementById('siguiente-carta');
+    const ankiContainer = document.getElementById('anki-container');
+    const mostrarCartaBtn = document.getElementById('mostrar-carta');
 
     const vocabulario = [
-        { japones: 'おはようございます', español: 'Buenos días (formal)' },
-        { japones: 'こんにちは', español: 'Hola / Buenas tardes' },
-        { japones: 'こんばんは', español: 'Buenas noches' },
+        { japones: 'こんにちは', español: 'Hola' },
         { japones: 'ありがとう', español: 'Gracias' },
-        { japones: 'すみません', español: 'Disculpe / Lo siento' },
+        { japones: 'おはようございます', español: 'Buenos días' },
+        { japones: 'こんばんは', español: 'Buenas noches' },
+        { japones: 'さようなら', español: 'Adiós' },
         { japones: 'はい', español: 'Sí' },
         { japones: 'いいえ', español: 'No' },
-        { japones: 'お名前は？', español: '¿Cuál es tu nombre?' },
-        { japones: '私は [nombre] です', español: 'Yo soy [nombre]' },
-        { japones: 'はじめまして', español: 'Encantado de conocerte' }
+        { japones: 'おねがいします', español: 'Por favor' },
+        { japones: 'すみません', español: 'Disculpe / Perdón' },
+        { japones: 'わたし', español: 'Yo' }
         // Agrega más vocabulario aquí
     ];
 
     let indiceCartaActual = 0;
-    let cartaActual;
+    let mostrarJapones = true;
 
     function mostrarCarta() {
         if (vocabulario.length === 0) {
-            cartasVocabularioDiv.innerHTML = '<p>¡No hay vocabulario disponible!</p>';
+            ankiContainer.textContent = '¡No hay vocabulario disponible!';
             return;
         }
 
-        const cartaData = vocabulario[indiceCartaActual];
-        cartasVocabularioDiv.innerHTML = `
-            <div class="carta">
-                <div class="pregunta">${cartaData.japones}</div>
-                <div class="respuesta">${cartaData.español}</div>
-            </div>
-        `;
-        cartaActual = document.querySelector('.carta');
-        const respuestaDiv = cartaActual.querySelector('.respuesta');
-        respuestaDiv.style.display = 'none'; // Oculta la respuesta al mostrar una nueva carta
+        const carta = vocabulario[indiceCartaActual];
+        ankiContainer.textContent = mostrarJapones ? carta.japones : carta.español;
     }
 
-    function mostrarOcultarRespuesta() {
-        if (cartaActual) {
-            const respuestaDiv = cartaActual.querySelector('.respuesta');
-            respuestaDiv.style.display = respuestaDiv.style.display === 'none' ? 'block' : 'none';
-        }
-    }
-
-    function siguienteCarta() {
-        indiceCartaActual = (indiceCartaActual + 1) % vocabulario.length;
+    mostrarCartaBtn.addEventListener('click', function() {
+        mostrarJapones = !mostrarJapones;
         mostrarCarta();
-    }
-
-    mostrarRespuestaBtn.addEventListener('click', mostrarOcultarRespuesta);
-    siguienteCartaBtn.addEventListener('click', siguienteCarta);
+        mostrarCartaBtn.textContent = mostrarJapones ? 'Mostrar Traducción' : 'Mostrar Japonés';
+    });
 
     // Mostrar la primera carta al cargar la página
     mostrarCarta();
+
+    // Función para pasar a la siguiente carta después de mostrar la traducción
+    ankiContainer.addEventListener('click', function() {
+        if (!mostrarJapones) {
+            indiceCartaActual = (indiceCartaActual + 1) % vocabulario.length;
+            mostrarJapones = true;
+            mostrarCarta();
+            mostrarCartaBtn.textContent = 'Mostrar Traducción';
+        }
+    });
 });
