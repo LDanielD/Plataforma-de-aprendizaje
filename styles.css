@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f7f7f7;
-    background-image: url('imagen-sakura.jpg'); 
+    background-image: 'imagen-sakura.jpg'; 
     background-size: cover;
     background-repeat: no-repeat;
     color: #333;
