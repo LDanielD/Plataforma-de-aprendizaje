@@ -1,8 +1,5 @@
-// Plataforma mejorada de aprendizaje de japonés - Frontend (React + Tailwind)
 import React, { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import "./App.css"; // Asegúrate de incluir este archivo
 
 export default function Home() {
   const [user, setUser] = useState("");
@@ -24,80 +21,76 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold mb-6">Plataforma de Aprendizaje de Japonés</h1>
+    <div className="background">
+      <div className="container">
+        <h1 className="main-title">Plataforma de Aprendizaje de Japonés</h1>
 
-      {!isLogged ? (
-        <div className="max-w-md space-y-4">
-          <Input
-            placeholder="Ingresa tu nombre de usuario"
-            value={user}
-            onChange={(e) => setUser(e.target.value)}
-          />
-          <Button onClick={handleLogin}>Ingresar</Button>
-        </div>
-      ) : (
-        <div className="space-y-10">
-          <div>
-            <h2 className="text-2xl font-semibold">Bienvenido/a, {user}!</h2>
-            <p className="text-gray-700">Selecciona una lección para comenzar:</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        {!isLogged ? (
+          <div className="login-box">
+            <input
+              placeholder="Ingresa tu nombre de usuario"
+              value={user}
+              onChange={(e) => setUser(e.target.value)}
+              className="input"
+            />
+            <button onClick={handleLogin} className="button">
+              Ingresar
+            </button>
+          </div>
+        ) : (
+          <div className="content">
+            <h2 className="welcome-text">Bienvenido/a, {user}!</h2>
+            <p>Selecciona una lección para comenzar:</p>
+            <div className="lessons-grid">
               {lessons.map((lesson) => (
-                <Card key={lesson.id} className="hover:shadow-lg transition">
-                  <CardContent className="p-4">
-                    <h3 className="text-lg font-bold mb-1">{lesson.title}</h3>
-                    <p className="text-sm text-gray-600">{lesson.description}</p>
-                    <Button className="mt-2">Iniciar</Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Sección de descripción del idioma */}
-          <div>
-            <h2 className="text-2xl font-bold mb-2">¿Qué es el idioma japonés?</h2>
-            <p className="text-gray-700 max-w-3xl">
-              El japonés es una lengua aglutinante hablada por más de 125 millones de personas, principalmente en Japón. Utiliza tres sistemas de escritura: hiragana, katakana y kanji. Tiene una estructura gramatical única y un fuerte componente cultural.
-            </p>
-          </div>
-
-          {/* Sección de cultura japonesa */}
-          <div>
-            <h2 className="text-2xl font-bold mb-2">Un vistazo a la cultura japonesa</h2>
-            <p className="text-gray-700 max-w-3xl">
-              Japón es reconocido por su rica historia, valores tradicionales como el respeto y la armonía, así como sus modernas innovaciones tecnológicas. Desde el arte del bonsái y la ceremonia del té hasta el anime y el manga, la cultura japonesa fascina al mundo.
-            </p>
-          </div>
-
-          {/* Sección interactiva de cartas */}
-          <div>
-            <h2 className="text-2xl font-bold mb-4">Sistemas de escritura japonesa</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {["hiragana", "katakana", "kanji"].map((type, index) => (
-                <div
-                  key={type}
-                  className="cursor-pointer perspective"
-                  onClick={() => flipCard(index)}
-                >
-                  <div className={`relative transition-transform duration-500 transform-style-preserve-3d ${flippedCard === index ? "rotate-y-180" : ""}`}>
-                    <div className="absolute backface-hidden bg-white p-4 shadow rounded-xl h-48 flex items-center justify-center">
-                      <h3 className="text-xl font-bold capitalize">{type}</h3>
-                    </div>
-                    <div className="absolute backface-hidden rotate-y-180 bg-blue-100 p-4 shadow rounded-xl h-48 flex items-center justify-center">
-                      <p className="text-sm text-gray-700 text-center">
-                        {type === "hiragana" && "El hiragana se utiliza para palabras japonesas nativas y partículas gramaticales."}
-                        {type === "katakana" && "El katakana se emplea para palabras extranjeras y nombres científicos."}
-                        {type === "kanji" && "Los kanjis son caracteres de origen chino que representan ideas o palabras completas."}
-                      </p>
-                    </div>
-                  </div>
+                <div key={lesson.id} className="lesson-card">
+                  <h3>{lesson.title}</h3>
+                  <p>{lesson.description}</p>
+                  <button className="button">Iniciar</button>
                 </div>
               ))}
             </div>
+
+            <div className="section">
+              <h2>¿Qué es el idioma japonés?</h2>
+              <p>
+                El japonés es una lengua hablada por más de 125 millones de personas, principalmente en Japón.
+                Utiliza tres sistemas de escritura: hiragana, katakana y kanji.
+              </p>
+            </div>
+
+            <div className="section">
+              <h2>Un vistazo a la cultura japonesa</h2>
+              <p>
+                Japón tiene una historia rica, valores tradicionales como el respeto, y modernidad tecnológica.
+                Desde bonsái hasta el anime, su cultura fascina al mundo.
+              </p>
+            </div>
+
+            <div className="section">
+              <h2>Sistemas de escritura japonesa</h2>
+              <div className="flip-grid">
+                {["hiragana", "katakana", "kanji"].map((type, index) => (
+                  <div
+                    key={type}
+                    className="flip-container"
+                    onClick={() => flipCard(index)}
+                  >
+                    <div className={`flip-card ${flippedCard === index ? "flipped" : ""}`}>
+                      <div className="front">{type}</div>
+                      <div className="back">
+                        {type === "hiragana" && "Se usa para palabras japonesas nativas y partículas gramaticales."}
+                        {type === "katakana" && "Se usa para palabras extranjeras y nombres científicos."}
+                        {type === "kanji" && "Caracteres de origen chino que representan ideas o palabras completas."}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
