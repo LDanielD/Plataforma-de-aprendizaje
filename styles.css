@@ -1,35 +1,39 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", sans-serif;
-  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  background: #fbeff2;
 }
 
 .background {
-  background-image: url("https://images.unsplash.com/photo-1587613755946-b245fc2a6738?auto=format&fit=crop&w=1740&q=80");
+  background-image: url("https://images.unsplash.com/photo-1555510652-3e4b7a5b6f47?auto=format&fit=crop&w=1950&q=80");
   background-size: cover;
   background-position: center;
   min-height: 100vh;
   padding: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 15px;
   padding: 30px;
+  width: 100%;
   max-width: 1000px;
-  margin: auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .main-title {
   text-align: center;
   font-size: 32px;
   margin-bottom: 30px;
-  color: #ffe0f0;
+  color: #e91e63;
 }
 
 .login-box {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #fff0f5;
   padding: 20px;
   border-radius: 10px;
   max-width: 400px;
@@ -41,7 +45,7 @@ body, html {
 
 .input {
   padding: 10px;
-  border: none;
+  border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
 }
@@ -64,27 +68,34 @@ body, html {
 .welcome-text {
   font-size: 24px;
   margin-bottom: 10px;
+  color: #ad1457;
 }
 
 .lessons-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 15px;
   margin: 20px 0;
 }
 
 .lesson-card {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #fff0f5;
   padding: 15px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.lesson-card:hover {
+  transform: translateY(-5px);
 }
 
 .section {
   margin-top: 30px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: #fffafa;
   padding: 20px;
   border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .flip-grid {
@@ -124,7 +135,8 @@ body, html {
   font-weight: bold;
   font-size: 16px;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
 }
 
 .front {
@@ -133,7 +145,7 @@ body, html {
 }
 
 .back {
-  background-color: #fff;
+  background-color: #ffeef0;
   color: #333;
   transform: rotateY(180deg);
 }
