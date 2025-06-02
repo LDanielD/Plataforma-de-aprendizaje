@@ -1,91 +1,79 @@
-import React, { useState } from "react";
-import "./App.css";
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende Japonés con Sakura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Aprende Japonés con Sakura</h1>
+        <nav>
+            <ul>
+                <li><a href="#introduccion">Introducción</a></li>
+                <li><a href="#escritura">Escritura Japonesa</a></li>
+                <li><a href="#cultura">Cultura Japonesa</a></li>
+                <li><a href="#vocabulario">Vocabulario Básico</a></li>
+            </ul>
+        </nav>
+    </header>
 
-export default function App() {
-  const [user, setUser] = useState("");
-  const [isLogged, setIsLogged] = useState(false);
-  const [flippedCard, setFlippedCard] = useState(null);
+    <main>
+        <section id="introduccion" class="seccion">
+            <h2>Introducción al Idioma Japonés</h2>
+            <p>¡Bienvenidos a tu aventura para aprender el fascinante idioma japonés! El japonés es hablado por más de 128 millones de personas, principalmente en Japón. Su rica historia y cultura lo convierten en un idioma apasionante para aprender.</p>
+            <p>En esta página, te guiaremos a través de los conceptos básicos, desde la escritura hasta la cultura, para que puedas dar tus primeros pasos en el mundo del japonés.</p>
+        </section>
 
-  const lessons = [
-    { id: 1, title: "Hiragana - Parte 1", description: "Aprende las primeras 10 sílabas." },
-    { id: 2, title: "Saludos básicos", description: "Saludos formales e informales en japonés." },
-    { id: 3, title: "Gramática N5 - Introducción", description: "Comienza con partículas básicas como は y の." },
-  ];
+        <section id="escritura" class="seccion">
+            <h2>Escritura Japonesa: Hiragana, Katakana y Kanji</h2>
+            <div class="escritura-explicacion">
+                <h3>Hiragana (ひらがな)</h3>
+                <p>El hiragana es un sistema de escritura silábico utilizado principalmente para escribir palabras japonesas nativas, partículas gramaticales y desinencias verbales y adjetivales. Cada carácter representa una sílaba.</p>
+                <p>Ejemplo: こんにちは (konnichiwa - hola)</p>
+                <a href="#" class="boton-escritura">Tabla de Hiragana</a>
+            </div>
+            <div class="escritura-explicacion">
+                <h3>Katakana (カタカナ)</h3>
+                <p>El katakana también es un sistema de escritura silábico, utilizado principalmente para escribir palabras de origen extranjero (préstamos lingüísticos), onomatopeyas y para dar énfasis.</p>
+                <p>Ejemplo: コーヒー (koohii - café)</p>
+                <a href="#" class="boton-escritura">Tabla de Katakana</a>
+            </div>
+            <div class="escritura-explicacion">
+                <h3>Kanji (漢字)</h3>
+                <p>Los kanji son caracteres chinos adoptados por el idioma japonés. Cada kanji tiene uno o varios significados y pronunciaciones. Aprender kanji es crucial para leer y escribir japonés avanzado.</p>
+                <p>Ejemplo: 日本 (nihon - Japón)</p>
+                <a href="#" class="boton-escritura">Introducción a Kanji</a>
+            </div>
+        </section>
 
-  const flipCard = (id) => {
-    setFlippedCard(flippedCard === id ? null : id);
-  };
+        <section id="cultura" class="seccion">
+            <h2>Cultura Japonesa</h2>
+            <p>La cultura japonesa es rica y diversa, con una larga historia y tradiciones únicas. Aquí exploraremos algunos aspectos importantes:</p>
+            <ul>
+                <li><strong>Etiqueta y Modales:</strong> La importancia de la cortesía, el respeto y la formalidad en las interacciones sociales.</li>
+                <li><strong>Ceremonia del Té (茶道 - Sadō):</strong> Un ritual tradicional que enfatiza la armonía, el respeto, la pureza y la tranquilidad.</li>
+                <li><strong>Festivales (祭り - Matsuri):</strong> Celebraciones locales con desfiles, comida y actividades tradicionales.</li>
+                <li><strong>Arte y Estética:</strong> El concepto de "wabi-sabi" (belleza en la imperfección y la transitoriedad), el arte del ikebana (arreglo floral) y la caligrafía (書道 - Shodō).</li>
+                <li><strong>Artes Marciales (武道 - Budō):</strong> Disciplinas como el karate, judo y kendo, que enfatizan la disciplina física y mental.</li>
+            </ul>
+            <p>¡Hay mucho más por descubrir sobre la fascinante cultura japonesa!</p>
+        </section>
 
-  const handleLogin = () => {
-    if (user.trim() !== "") setIsLogged(true);
-  };
-
-  return (
-    <div className="background">
-      <div className="container">
-        <h1 className="main-title">🌸 Plataforma de Aprendizaje de Japonés 🌸</h1>
-
-        {!isLogged ? (
-          <div className="login-box">
-            <input
-              placeholder="Ingresa tu nombre de usuario"
-              value={user}
-              onChange={(e) => setUser(e.target.value)}
-              className="input"
-            />
-            <button onClick={handleLogin} className="button">Ingresar</button>
-          </div>
-        ) : (
-          <div className="content">
-            <h2 className="welcome-text">Bienvenido/a, {user}!</h2>
-            <p>Selecciona una lección para comenzar:</p>
-
-            <div className="lessons-grid">
-              {lessons.map((lesson) => (
-                <div key={lesson.id} className="lesson-card">
-                  <h3>{lesson.title}</h3>
-                  <p>{lesson.description}</p>
-                  <button className="button">Iniciar</button>
+        <section id="vocabulario" class="seccion">
+            <h2>Vocabulario Básico</h2>
+            <div id="cartas-vocabulario">
                 </div>
-              ))}
-            </div>
+            <button id="mostrar-respuesta">Mostrar Respuesta</button>
+            <button id="siguiente-carta">Siguiente Carta</button>
+        </section>
+    </main>
 
-            <div className="section">
-              <h2>¿Qué es el idioma japonés?</h2>
-              <p>
-                El japonés es una lengua hablada por más de 125 millones de personas, principalmente en Japón.
-                Utiliza tres sistemas de escritura: hiragana, katakana y kanji.
-              </p>
-            </div>
+    <footer>
+        <p>&copy; 2025 Aprende Japonés con Sakura</p>
+    </footer>
 
-            <div className="section">
-              <h2>Un vistazo a la cultura japonesa</h2>
-              <p>
-                Japón es conocido por su historia, valores como el respeto, y avances tecnológicos.
-                Desde el bonsái y la ceremonia del té hasta el anime y el manga, su cultura fascina al mundo.
-              </p>
-            </div>
-
-            <div className="section">
-              <h2>Sistemas de escritura japonesa</h2>
-              <div className="flip-grid">
-                {["hiragana", "katakana", "kanji"].map((type, index) => (
-                  <div key={type} className="flip-container" onClick={() => flipCard(index)}>
-                    <div className={`flip-card ${flippedCard === index ? "flipped" : ""}`}>
-                      <div className="front">{type}</div>
-                      <div className="back">
-                        {type === "hiragana" && "Se usa para palabras japonesas nativas y partículas gramaticales."}
-                        {type === "katakana" && "Se usa para palabras extranjeras y nombres científicos."}
-                        {type === "kanji" && "Caracteres de origen chino que representan ideas o palabras completas."}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
+    <script src="script.js"></script>
+</body>
+</html>
