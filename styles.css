@@ -1,12 +1,26 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente legible */
+/* CSS para Aprende Japonés con Sakura - Revisado */
+
+/* Reseteo básico para asegurar consistencia entre navegadores */
+html, body {
     margin: 0;
     padding: 0;
-    background-image: url('sakura_fondo_suave.jpg'); /* Fondo más sutil */
-    background-size: cover;
-    background-position: center;
-    color: #444; /* Tono de texto más suave */
-    line-height: 1.6; /* Mejor legibilidad */
+    height: 100%; /* Asegura que el body ocupe toda la altura de la ventana */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #444;
+    line-height: 1.6;
+
+    /* *** OPCIÓN 1: Imagen de fondo directamente en el body *** */
+    background-image: url('sakura_fondo.jpg'); /* Asegúrate de la ruta correcta */
+    background-size: cover; /* Cubre todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    background-attachment: fixed; /* Fija el fondo al hacer scroll (opcional) */
+
+    /* *** ALTERNATIVA 2: Fondo con degradado suave (sin imagen inicialmente) *** */
+    /* background: linear-gradient(135deg, #fdecea, #f5f5f5); /* Un degradado rosa suave a gris claro */
 }
 
 header {
@@ -15,6 +29,9 @@ header {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid #eee;
+    position: sticky; /* Para el menú fijo */
+    top: 0;
+    z-index: 100;
 }
 
 nav ul {
@@ -32,7 +49,7 @@ nav a {
     font-weight: 500;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
@@ -42,6 +59,8 @@ nav a:hover {
 
 main {
     padding: 40px;
+    /* Asegura que el main tenga suficiente altura para mostrar el fondo */
+    min-height: calc(100vh - (/* altura del header */ 90px + /* altura del footer */ 60px));
 }
 
 .seccion {
@@ -98,6 +117,12 @@ h2, h3 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 500px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.carta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .pregunta {
@@ -136,4 +161,39 @@ footer {
     padding: 20px;
     border-top: 1px solid #eee;
     color: #777;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav li {
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .seccion {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    #cartas-vocabulario .carta {
+        width: 95%;
+    }
 }
