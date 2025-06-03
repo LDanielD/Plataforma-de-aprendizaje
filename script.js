@@ -7,14 +7,33 @@ document.addEventListener('DOMContentLoaded', function() {
         { japones: 'おはようございます', español: 'Buenos días (formal)' },
         { japones: 'こんにちは', español: 'Hola / Buenas tardes' },
         { japones: 'こんばんは', español: 'Buenas noches' },
+        { japones: 'おやすみなさい', español: 'Buenas noches (al ir a dormir)' },
         { japones: 'ありがとう', español: 'Gracias' },
-        { japones: 'すみません', español: 'Disculpe / Lo siento' },
+        { japones: 'ありがとうございます', español: 'Muchas gracias (formal)' },
+        { japones: 'どういたしまして', español: 'De nada' },
+        { japones: 'すみません', español: 'Disculpe / Lo siento / Permiso' },
+        { japones: 'ごめんなさい', español: 'Lo siento (más enfático)' },
         { japones: 'はい', español: 'Sí' },
         { japones: 'いいえ', español: 'No' },
+        { japones: 'お願いします', español: 'Por favor (al pedir algo)' },
+        { japones: 'ください', español: 'Por favor (al pedir un objeto)' },
+        { japones: 'いただきます', español: '¡Buen provecho! / Agradecimiento antes de comer' },
+        { japones: 'ごちそうさまでした', español: 'Gracias por la comida (después de comer)' },
         { japones: 'お名前は？', español: '¿Cuál es tu nombre?' },
         { japones: '私は [nombre] です', español: 'Yo soy [nombre]' },
-        { japones: 'はじめまして', español: 'Encantado de conocerte' }
-        // Agrega más vocabulario aquí
+        { japones: 'はじめまして', español: 'Encantado de conocerte' },
+        { japones: 'どうぞよろしく', español: 'Mucho gusto (frase que sigue a "はじめまして")' },
+        { japones: 'さようなら', español: 'Adiós' },
+        { japones: 'またね', español: 'Nos vemos / Hasta luego (informal)' },
+        { japones: 'お元気ですか？', español: '¿Cómo estás?' },
+        { japones: '元気です', español: 'Estoy bien' },
+        { japones: 'これは何ですか？', español: '¿Qué es esto?' },
+        { japones: 'どこですか？', español: '¿Dónde está?' },
+        { japones: 'いくらですか？', español: '¿Cuánto cuesta?' },
+        { japones: '日本語', español: 'Idioma japonés' },
+        { japones: '英語', español: 'Idioma inglés' },
+        { japones: 'はい、そうです', español: 'Sí, así es' },
+        { japones: '違います', español: 'No, no es así / incorrecto' }
     ];
 
     let indiceCartaActual = 0;
