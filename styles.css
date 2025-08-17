@@ -1,7 +1,7 @@
 /* General */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fff5f8; /* fondo rosado claro */
+    background-color: #c3ecfa; /* fondo rosado claro */
     color: #333;
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@ body {
 
 /* Encabezado */
 header {
-    background-color: #ffcce0;
+    background-color: #908efa;
     padding: 1rem 2rem;
     text-align: center;
     border-bottom: 2px solid #ffb6c1;
@@ -18,7 +18,7 @@ header {
 
 header h1 {
     margin: 0;
-    color: #8b2c4a;
+    color: #4c2c8b;
 }
 
 nav ul {
@@ -37,7 +37,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #d6336c;
+    color: #331ab0;
 }
 
 /* Secciones */
@@ -145,3 +145,4 @@ footer {
     margin-top: 0.5rem;
     display: none; /* por si se carga antes del script */
 }
+
