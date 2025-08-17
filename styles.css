@@ -52,7 +52,7 @@ nav a:hover {
 }
 
 .seccion h2 {
-    color: #d6336c;
+    color: #202885;
 }
 
 /* Tablas */
@@ -60,7 +60,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
-    background-color: #ffe4ec;
+    background-color: #d5dcf7;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -74,14 +74,14 @@ caption {
 }
 
 th, td {
-    border: 1px solid #ffb6c1;
+    border: 1px solid #ab94f2;
     padding: 0.6rem;
     text-align: center;
 }
 
 th {
     background-color: #ffc0cb;
-    color: #70263c;
+    color: #100e5c;
 }
 
 /* Botones */
@@ -145,4 +145,5 @@ footer {
     margin-top: 0.5rem;
     display: none; /* por si se carga antes del script */
 }
+
 
