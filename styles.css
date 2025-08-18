@@ -1,22 +1,22 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e0f7fa; /* Azul muy claro */
-    color: #001f3f; /* Azul oscuro */
+    background-color: #e0f7fa;
+    color: #001f3f;
     margin: 0;
     padding: 0;
     line-height: 1.6;
 }
 
 header {
-    background-color: #007bb6; /* Azul medio */
+    background-color: #007bb6;
     padding: 1rem 2rem;
     text-align: center;
-    border-bottom: 2px solid #005f96; /* Azul más oscuro */
+    border-bottom: 2px solid #005f96;
 }
 
 header h1 {
     margin: 0;
-    color: #e0f7fa; /* Azul muy claro para el texto */
+    color: #e0f7fa;
 }
 
 nav ul {
@@ -30,33 +30,33 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #002e5b; /* Azul oscuro */
+    color: #002e5b;
     font-weight: bold;
 }
 
 nav a:hover {
-    color: #004d80; /* Azul un poco más claro al pasar el mouse */
+    color: #004d80;
 }
 
 .seccion {
     padding: 2rem;
     max-width: 1000px;
     margin: 0 auto;
-    background-color: #ffffff; /* Blanco */
+    background-color: #ffffff;
     border-radius: 10px;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 123, 191, 0.4); /* Sombra azulada */
+    box-shadow: 0 4px 8px rgba(0, 123, 191, 0.4);
 }
 
 .seccion h2 {
-    color: #002e5b; /* Azul oscuro */
+    color: #002e5b;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
-    background-color: #b3e5fc; /* Azul claro */
+    background-color: #b3e5fc;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -66,29 +66,29 @@ caption {
     font-weight: bold;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: #005b8a; /* Azul medio oscuro */
+    color: #005b8a;
 }
 
 th, td {
-    border: 1px solid #0077b6; /* Azul medio */
+    border: 1px solid #0077b6;
     padding: 0.6rem;
     text-align: center;
 }
 
 th {
-    background-color: #00a4d9; /* Azul brillante */
-    color: #ffffff; /* Texto blanco */
+    background-color: #00a4d9;
+    color: #ffffff;
 }
 
 button,
 .boton-escritura {
-    background-color: #007bb6; /* Azul medio */
+    background-color: #007bb6;
     border: none;
     padding: 0.6rem 1rem;
     margin: 0.5rem 0;
     border-radius: 8px;
     cursor: pointer;
-    color: #fff; /* Texto blanco */
+    color: #fff;
     font-weight: bold;
     text-decoration: none;
     transition: background-color 0.3s ease;
@@ -97,15 +97,15 @@ button,
 
 button:hover,
 .boton-escritura:hover {
-    background-color: #005f96; /* Azul más oscuro al pasar el mouse */
+    background-color: #005f96;
 }
 
 footer {
     text-align: center;
-    background-color: #004a7c; /* Azul oscuro */
+    background-color: #004a7c;
     padding: 1rem;
-    color: #b3e5fc; /* Azul claro para el texto */
-    border-top: 2px solid #002e5b; /* Azul muy oscuro */
+    color: #b3e5fc;
+    border-top: 2px solid #002e5b;
 }
 
 @media screen and (max-width: 600px) {
@@ -116,13 +116,13 @@ footer {
 }
 
 .carta {
-    background-color: #f0f8ff; /* Blanco azulado */
-    border: 2px solid #007bb6; /* Azul medio */
+    background-color: #f0f8ff;
+    border: 2px solid #007bb6;
     border-radius: 10px;
     padding: 1rem;
     margin: 1rem auto;
     max-width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 123, 191, 0.3); /* Sombra azulada */
+    box-shadow: 0 4px 8px rgba(0, 123, 191, 0.3);
     text-align: center;
     font-size: 1.2rem;
     transition: all 0.3s ease;
@@ -130,28 +130,28 @@ footer {
 
 .carta .pregunta {
     font-weight: bold;
-    color: #002e5b; /* Azul oscuro */
+    color: #002e5b;
     margin-bottom: 1rem;
 }
 
 .carta .respuesta {
-    color: #001f3f; /* Azul muy oscuro */
+    color: #001f3f;
     margin-top: 0.5rem;
     display: none;
 }
 
 .caja-css {
-    background-color: #b3e5fc; /* Azul claro */
+    background-color: #b3e5fc;
     padding: 15px;
     border-radius: 12px;
-    box-shadow: 2px 2px 8px rgba(0, 77, 128, 0.4); /* Sombra azulada */
+    box-shadow: 2px 2px 8px rgba(0, 77, 128, 0.4);
     margin: 1rem 0;
 }
 
 .bola {
     width: 50px;
     height: 50px;
-    background-color: #003366; /* Azul oscuro para la bola */
+    background-color: #003366;
     border-radius: 50%;
     position: relative;
     animation: mover 3s infinite alternate;
@@ -161,3 +161,4 @@ footer {
     from { left: 0; }
     to { left: 200px; }
 }
+
