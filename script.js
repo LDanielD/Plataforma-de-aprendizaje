@@ -72,6 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
     mostrarRespuestaBtn.addEventListener('click', mostrarOcultarRespuesta);
     siguienteCartaBtn.addEventListener('click', siguienteCarta);
 
-    // Mostrar la primera carta al cargar la página
     mostrarCarta();
 });
+
