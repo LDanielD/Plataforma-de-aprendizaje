@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         cartaActual = document.querySelector('.carta');
         const respuestaDiv = cartaActual.querySelector('.respuesta');
-        respuestaDiv.style.display = 'none'; // Oculta la respuesta al mostrar una nueva carta
+        respuestaDiv.style.display = 'none';
     }
 
     function mostrarOcultarRespuesta() {
@@ -74,4 +74,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     mostrarCarta();
 });
+
 
