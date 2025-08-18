@@ -1,24 +1,22 @@
-/* General */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #c3ecfa; /* fondo rosado claro */
+    background-color: #b5e8ff;
     color: #333;
     margin: 0;
     padding: 0;
     line-height: 1.6;
 }
 
-/* Encabezado */
 header {
-    background-color: #908efa;
+    background-color: #5a7dff;
     padding: 1rem 2rem;
     text-align: center;
-    border-bottom: 2px solid #ffb6c1;
+    border-bottom: 2px solid #80c8ff;
 }
 
 header h1 {
     margin: 0;
-    color: #4c2c8b;
+    color: #132a74;
 }
 
 nav ul {
@@ -32,15 +30,14 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #8b2c4a;
+    color: #003366;
     font-weight: bold;
 }
 
 nav a:hover {
-    color: #331ab0;
+    color: #0044cc;
 }
 
-/* Secciones */
 .seccion {
     padding: 2rem;
     max-width: 1000px;
@@ -48,19 +45,18 @@ nav a:hover {
     background-color: #ffffffcc;
     border-radius: 10px;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 8px rgba(255, 182, 193, 0.4);
+    box-shadow: 0 4px 8px rgba(100, 149, 237, 0.4);
 }
 
 .seccion h2 {
-    color: #202885;
+    color: #003366;
 }
 
-/* Tablas */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
-    background-color: #d5dcf7;
+    background-color: #d5e8ff;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -70,24 +66,23 @@ caption {
     font-weight: bold;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: #b03060;
+    color: #004080;
 }
 
 th, td {
-    border: 1px solid #ab94f2;
+    border: 1px solid #80aaff;
     padding: 0.6rem;
     text-align: center;
 }
 
 th {
-    background-color: #ffc0cb;
-    color: #100e5c;
+    background-color: #a6c8ff;
+    color: #001a4d;
 }
 
-/* Botones */
 button,
 .boton-escritura {
-    background-color: #ffb6c1;
+    background-color: #3399ff;
     border: none;
     padding: 0.6rem 1rem;
     margin: 0.5rem 0;
@@ -102,33 +97,32 @@ button,
 
 button:hover,
 .boton-escritura:hover {
-    background-color: #e48da0;
+    background-color: #2673cc;
 }
 
-/* Footer */
 footer {
     text-align: center;
-    background-color: #ffcce0;
+    background-color: #99ccff;
     padding: 1rem;
-    color: #8b2c4a;
-    border-top: 2px solid #ffb6c1;
+    color: #00264d;
+    border-top: 2px solid #80c8ff;
 }
 
-/* Responsive */
 @media screen and (max-width: 600px) {
     nav ul {
         flex-direction: column;
         gap: 0.5rem;
     }
 }
+
 .carta {
-    background-color: #ffe4ec;
-    border: 2px solid #ffb6c1;
+    background-color: #e6f3ff;
+    border: 2px solid #80c8ff;
     border-radius: 10px;
     padding: 1rem;
     margin: 1rem auto;
     max-width: 400px;
-    box-shadow: 0 4px 8px rgba(255, 182, 193, 0.3);
+    box-shadow: 0 4px 8px rgba(100, 149, 237, 0.3);
     text-align: center;
     font-size: 1.2rem;
     transition: all 0.3s ease;
@@ -136,14 +130,34 @@ footer {
 
 .carta .pregunta {
     font-weight: bold;
-    color: #8b2c4a;
+    color: #003366;
     margin-bottom: 1rem;
 }
 
 .carta .respuesta {
-    color: #4b2e39;
+    color: #001a33;
     margin-top: 0.5rem;
-    display: none; /* por si se carga antes del script */
+    display: none;
 }
 
+.caja-css {
+    background-color: #d5e8ff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 8px rgba(0, 102, 204, 0.4);
+    margin: 1rem 0;
+}
 
+.bola {
+    width: 50px;
+    height: 50px;
+    background-color: #0059b3;
+    border-radius: 50%;
+    position: relative;
+    animation: mover 3s infinite alternate;
+}
+
+@keyframes mover {
+    from { left: 0; }
+    to { left: 200px; }
+}
