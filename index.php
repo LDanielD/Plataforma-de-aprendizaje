@@ -1,3 +1,58 @@
+<?php
+session_start();
+$nombre_usuario = $_COOKIE['usuario_nombre'] ?? null;
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende Japonés (y HTML y CSS)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Aprende Japonés (y HTML y CSS)</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="seccion">
+            <h2>Bienvenido a Aprende Japonés</h2>
+            <?php if ($nombre_usuario) : ?>
+                <p>Bienvenido de nuevo, <?php echo htmlspecialchars($nombre_usuario); ?>. Nos alegra verte otra vez.</p>
+            <?php endif; ?>
+            <p>Este sitio web está diseñado para guiarte...</p>
+        </section>
+
+        <section id="lenguaje" class="seccion">
+            <h2>Lenguaje de Marcas (HTML5)</h2>
+            <?php
+            // Mostrar mensajes de éxito o error del formulario
+            if (isset($_SESSION['mensaje_exito'])) {
+                echo "<div class='mensaje_exito'>{$_SESSION['mensaje_exito']}</div>";
+                unset($_SESSION['mensaje_exito']); // Limpiar la variable de sesión
+            }
+            if (isset($_SESSION['errores_formulario'])) {
+                echo "<div class='mensaje_error'><h4>Errores en el formulario:</h4><ul>";
+                foreach ($_SESSION['errores_formulario'] as $error) {
+                    echo "<li>$error</li>";
+                }
+                echo "</ul></div>";
+                unset($_SESSION['errores_formulario']); // Limpiar la variable de sesión
+            }
+            ?>
+        </section>
+
+        </main>
+    
+    </body>
+</html>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -196,4 +251,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
